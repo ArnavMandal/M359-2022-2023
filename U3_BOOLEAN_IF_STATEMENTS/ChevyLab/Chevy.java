@@ -65,13 +65,13 @@ public class Chevy {
         }
     }
 
-    public String toString(){
-    String output ="**************************************************\n"+this.year+" "+this.MAKE+" "+this.model+" ("+
-            this.color+")\n\t"+"BASE PRICE:\t\t\t$"+this.price+"\n\tMILES:\t\t\t\t"+this.miles+"\n\tFUEL EFFICIENCY:\t\t"
-            +this.mpg+" mpg\n\t"+"PACKAGES: ";
-        if(hasLuxuryPkg == true){
+    public String toString() {
+        String output = "**************************************************\n" + this.year + " " + this.MAKE + " " + this.model + " (" +
+                this.color + ")\n\t" + "BASE PRICE:\t\t\t$" + this.price + "\n\tMILES:\t\t\t\t" + this.miles + "\n\tFUEL EFFICIENCY:\t\t"
+                + this.mpg + " mpg\n\t" + "PACKAGES: ";
+        if (hasLuxuryPkg == true) {
+        }
     }
-
     public int getYear() {
         return year;
     }
