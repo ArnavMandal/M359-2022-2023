@@ -68,8 +68,33 @@ public class Chevy {
     public String toString() {
         String output = "**************************************************\n" + this.year + " " + this.MAKE + " " + this.model + " (" +
                 this.color + ")\n\t" + "BASE PRICE:\t\t\t$" + this.price + "\n\tMILES:\t\t\t\t" + this.miles + "\n\tFUEL EFFICIENCY:\t\t"
-                + this.mpg + " mpg\n\t" + "PACKAGES: ";
+                + this.mpg + " mpg\n\t" + "PACKAGES:\n\t";
         if (hasLuxuryPkg == true) {
+            output += "\t - Luxury Package";
+        }
+        if (has4WDPkg == true){
+            output += "\t - 4WD Package";
+        }
+        if(hasSportsPkg == true){
+            output += "\t - Sports Package";
+        }else if(hasSportsPkg == false && has4WDPkg == false && hasLuxuryPkg == false){
+            output += "\t - None";
+        }
+        output += "\n\t PRICE WITH UPGRADES:\t\t\t$"+this.priceWithUpgrades+"\n\tFINAL PRICE WITH TAX:\t\t$"+this.getGrandTotal()
+        +"\n*************************************************";
+        return output;
+    }
+    public void calcPrice(){
+        this.priceWithUpgrades = this.price;
+        if(hasLuxuryPkg == true){
+        this.priceWithUpgrades += this.price*.2;
+        }
+        if(has4WDPkg){
+            this.priceWithUpgrades += 3500;
+        }
+        if(hasSportsPkg){
+            this.priceWithUpgrades += this.price*.15;
+            this.mpg = this.mpg*0.8;
         }
     }
     public int getYear() {
@@ -113,7 +138,9 @@ public class Chevy {
     }
 
     public double getGrandTotal() {
-        return grandTotal;
+        this.grandTotal = this.priceWithUpgrades;
+        this.grandTotal += this.priceWithUpgrades * this.TAX_RATE;
+        return this.grandTotal;
     }
 
     public void setGrandTotal(double grandTotal) {
