@@ -66,36 +66,38 @@ public class Chevy {
     }
 
     public String toString() {
-        String output = "**************************************************\n" + this.year + " " + this.MAKE + " " + this.model + " (" +
-                this.color + ")\n\t" + "BASE PRICE:\t\t\t$" + this.price + "\n\tMILES:\t\t\t\t" + this.miles + "\n\tFUEL EFFICIENCY:\t\t"
-                + this.mpg + " mpg\n\t" + "PACKAGES:\n\t";
+        String output = "*************************************************\n" + this.year + " " + this.MAKE + " " + this.model + " (" +
+                this.color + ")\n\t" + "BASE PRICE:\t\t\t\t\t$" + this.price + "\n\tMILES:\t\t\t\t\t\t" + this.miles + "\n\tFUEL EFFICIENCY:\t\t\t"
+                + this.mpg + " mpg\n\t" + "PACKAGES:";
         if (hasLuxuryPkg == true) {
-            output += "\t - Luxury Package";
+            output += "\n\t - Luxury Package";
         }
         if (has4WDPkg == true){
-            output += "\t - 4WD Package";
+            output += "\n\t - 4WD Package";
         }
         if(hasSportsPkg == true){
-            output += "\t - Sports Package";
+            output += "\n\t - Sports Package";
         }else if(hasSportsPkg == false && has4WDPkg == false && hasLuxuryPkg == false){
             output += "\t - None";
         }
-        output += "\n\t PRICE WITH UPGRADES:\t\t\t$"+this.priceWithUpgrades+"\n\tFINAL PRICE WITH TAX:\t\t$"+this.getGrandTotal()
+        output +="\n\tPRICE WITH UPGRADES:\t\t$"+this.getPriceWithUpgrades()+"\n\tFINAL PRICE WITH TAX:\t\t$"+this.getGrandTotal()
         +"\n*************************************************";
         return output;
     }
-    public void calcPrice(){
+    public double calcPrice(){
         this.priceWithUpgrades = this.price;
         if(hasLuxuryPkg == true){
         this.priceWithUpgrades += this.price*.2;
         }
-        if(has4WDPkg){
+        if(has4WDPkg == true){
             this.priceWithUpgrades += 3500;
         }
-        if(hasSportsPkg){
+        if(hasSportsPkg == true){
             this.priceWithUpgrades += this.price*.15;
             this.mpg = this.mpg*0.8;
         }
+        return priceWithUpgrades;
+
     }
     public int getYear() {
         return year;
@@ -130,7 +132,7 @@ public class Chevy {
     }
 
     public double getPriceWithUpgrades() {
-        return priceWithUpgrades;
+        return this.calcPrice();
     }
 
     public void setPriceWithUpgrades(double priceWithUpgrades) {
@@ -138,8 +140,8 @@ public class Chevy {
     }
 
     public double getGrandTotal() {
-        this.grandTotal = this.priceWithUpgrades;
-        this.grandTotal += this.priceWithUpgrades * this.TAX_RATE;
+        this.grandTotal = this.calcPrice();
+        this.grandTotal += this.calcPrice() * this.TAX_RATE;
         return this.grandTotal;
     }
 
