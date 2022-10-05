@@ -14,11 +14,15 @@ public class U4_1_NOTES {
             if(reply.equalsIgnoreCase("Y")){
                 System.out.println("what is your number?");
                 num = input.nextInt();
+                input.nextLine(); // to clear "enter" after
                 total += num;
                 numScores++;
             }else{
                 isDone = true;
             }
         }
+        System.out.println("Sum of all nums: "+total);
+        double avg = (double)total/numScores;
+        System.out.println("Avg: "+ avg);
     }
 }
