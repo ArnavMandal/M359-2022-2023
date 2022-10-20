@@ -3,12 +3,28 @@ package U4_LOOPS.PigLatinLab;
 
 
 public class PigLatin {
+    /**
+     * This function takes a phrase with multiple words and returns a String with the phrase in pigLatin
+     * @param str
+     * @return
+     */
+    public static String toPigLatin(String str){
 
+        str += " ";
+        String newSentence = "";
+
+        while(str.length() != 0){
+            newSentence += translateWordToPigLatin(str.substring(0, str.indexOf(" ")));
+            newSentence += " ";
+            str = str.substring(str.indexOf(" ") + 1);
+        }
+        newSentence = newSentence.substring(0, 1).toUpperCase() + newSentence.substring(1, newSentence.length() - 1);
+        return newSentence;
+    }
     public static String translateWordToPigLatin(String str){
         if(vowelHelper(str)){
             str += "yay";
-            str.toLowerCase();
-            return str;
+            return str.toLowerCase();
         }else{
             for (int i = 0; i < str.length(); i++){
                 if(!vowelHelper(str)){
@@ -16,17 +32,9 @@ public class PigLatin {
                 }
             }
             str += "ay";
-            str.toLowerCase();
-            return str;
+            return str.toLowerCase();
         }
 }
-/*
-public static String toPigLatin(String str){
-        String sentence = str.toLowerCase();
-        String temp = "";
-
-}
-*/
 
 public static boolean vowelHelper(String word){
     if     (word.substring(0, 1).equalsIgnoreCase("a") ||
