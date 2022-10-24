@@ -22,7 +22,7 @@ public class PigLatin {
            based on the location of a space or " " and translates them using
            the translateWordToPigLatin method, adding that to the newSentence string.
            We then chop off the str after that space " " and repeat until there are no
-           words lefts.
+           words lefts in the inout string.
          */
 
         while(str.length() != 0){
@@ -55,7 +55,9 @@ public class PigLatin {
             return str.toLowerCase();
         }
 
-        // if the string doesnt start with a vowel the method loops
+        /* if the string doesn't start with a vowel the method loops and moves
+         each subsequent letter to the end of the string until a vowel
+         shows up */
         else{
             for (int i = 0; i < str.length(); i++){
                 if(!vowelHelper(str)){
@@ -71,7 +73,13 @@ public class PigLatin {
 
 }
 
-public static boolean vowelHelper(String word){
+    /**
+     * This helper method checks if a String starts with a vowel
+     * @param word this is the String that is being checked
+     * @return returns a boolean value of true or false if the word starts with
+     * a vowel
+     */
+    public static boolean vowelHelper(String word){
     if     (word.substring(0, 1).equalsIgnoreCase("a") ||
             word.substring(0, 1).equalsIgnoreCase("e") ||
             word.substring(0, 1).equalsIgnoreCase("i") ||
