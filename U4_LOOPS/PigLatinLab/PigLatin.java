@@ -79,6 +79,7 @@ public class PigLatin {
      * @return returns a boolean value of true or false if the word starts with
      * a vowel
      */
+    // test hello cat
     public static boolean vowelHelper(String word){
     if     (word.substring(0, 1).equalsIgnoreCase("a") ||
             word.substring(0, 1).equalsIgnoreCase("e") ||
