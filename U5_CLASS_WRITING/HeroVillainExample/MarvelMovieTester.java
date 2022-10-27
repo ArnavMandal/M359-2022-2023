@@ -7,5 +7,15 @@ public class MarvelMovieTester {
         Power p2 = new Power("Flight", 8);
 
         SuperHero SuperMan = new SuperHero("Clark Kent", p2);
+        System.out.println(SuperMan);
+        System.out.println();
+        SuperVillian reverseFlash = new SuperVillian("Reverse Flash", p1);
+        System.out.println(reverseFlash);
+
+        reverseFlash.getSuperPower().setPowerStrength(6);
+
+        System.out.println(SuperMan);
+        System.out.println();
+        System.out.println(reverseFlash);
     }
 }

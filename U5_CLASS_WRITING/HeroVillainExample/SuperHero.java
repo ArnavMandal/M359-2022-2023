@@ -5,14 +5,15 @@ public class SuperHero {
 
     private Power superPower;
 
-    public SuperHero(String heroName, Power SuperPower){
+    public SuperHero(String heroName, Power superPower){
         this.heroName = heroName;
         this.superPower = new Power(superPower.getPower(), superPower.getPowerStrength());
     }
 
     public String toString(){
         String output ="";
-        output += "SuperHero name: " +getHeroName() + "SuperPower: ";
+        output += "SuperHero name: " +this.heroName +"\n";
+        output+= superPower.toString();
         return output;
     }
 

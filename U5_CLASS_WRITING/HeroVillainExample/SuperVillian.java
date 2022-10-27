@@ -5,9 +5,15 @@ public class SuperVillian {
 
     private Power superPower;
 
-    public SuperVillian(String villianName, Power SuperPower){
+    public SuperVillian(String villianName, Power superPower){
         this.villianName = villianName;
         this.superPower = new Power(superPower.getPower(), superPower.getPowerStrength());
+    }
+    public String toString(){
+        String output ="";
+        output += "SuperVillian name: " +this.villianName +"\n";
+        output += superPower.toString();
+        return output;
     }
 
     public String getVillianName() {
