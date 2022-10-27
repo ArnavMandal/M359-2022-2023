@@ -9,12 +9,13 @@ public class SuperHero {
         this.heroName = heroName;
         this.superPower = new Power(superPower.getPower(), superPower.getPowerStrength());
     }
-    /*
+
     public String toString(){
         String output ="";
-        output += "Super"
+        output += "SuperHero name: " +getHeroName() + "SuperPower: ";
+        return output;
     }
-     */
+
     public String getHeroName() {
         return heroName;
     }

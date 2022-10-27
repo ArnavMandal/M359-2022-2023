@@ -1,10 +1,8 @@
 package U4_LOOPS.PigLatinLab;
-
 import static org.junit.Assert.assertEquals;
 import org.junit.Before;
 import org.junit.After;
 import org.junit.Test;
-
 public class PigLatinJUnitTest {
 
     @Before

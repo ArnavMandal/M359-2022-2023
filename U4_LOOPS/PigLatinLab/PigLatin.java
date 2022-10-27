@@ -45,7 +45,7 @@ public class PigLatin {
     /**
      *  this method translates a single string to pig latin and returns the translated string
      * @param str the word you want to translate
-     * @return the translated word
+     * @return returns the translated word
      */
     public static String translateWordToPigLatin(String str){
         // this if statement checks if the input string starts with a vowel
@@ -79,9 +79,8 @@ public class PigLatin {
      * @return returns a boolean value of true or false if the word starts with
      * a vowel
      */
-    // test hello cat
     public static boolean vowelHelper(String word){
-    if     (word.substring(0, 1).equalsIgnoreCase("a") ||
+        if (word.substring(0, 1).equalsIgnoreCase("a") ||
             word.substring(0, 1).equalsIgnoreCase("e") ||
             word.substring(0, 1).equalsIgnoreCase("i") ||
             word.substring(0, 1).equalsIgnoreCase("o") ||
