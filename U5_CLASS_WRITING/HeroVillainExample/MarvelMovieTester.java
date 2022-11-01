@@ -55,7 +55,7 @@ public class MarvelMovieTester {
         a.getSuperPower().setPowerStrength(newHero);
     }else{
         System.out.println("lolol");
-        //hello test
+        //hello guys
     }
     }
 }
