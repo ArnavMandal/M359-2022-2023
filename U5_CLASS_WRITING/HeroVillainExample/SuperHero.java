@@ -5,7 +5,14 @@ public class SuperHero {
 
     private Power superPower;
 
+    private static int numHeros = 0;
+
+    public static int getNumHeros(){
+        return numHeros;
+    }
     public SuperHero(String heroName, Power superPower){
+        // somebody call the constructor, so we're creating a
+        // new SuperHero object, so update the count
         this.heroName = heroName;
         this.superPower = new Power(superPower.getPower(), superPower.getPowerStrength());
     }
