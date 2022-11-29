@@ -8,7 +8,11 @@ public class Student {
     // full constuctor
     public Student(String name, Course[] myClasses){
         this.name = name;
-        this.myClasses = myClasses;
+        this.myClasses =new Course[8];
+        for (int i  = 0; i < 8; i++){
+            this.myClasses[i] = new Course(myClasses[i].getTeacherName(), myClasses[i].getSubject(),
+                                            myClasses[i].getCurrentGrade(), myClasses[i].getPeriod());
+        }
     }
     // Write toString method that displays info of name and courses
     public String toString(){

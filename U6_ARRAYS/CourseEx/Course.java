@@ -54,7 +54,7 @@ public class Course {
 
     // Create a toString method that will return course info
     public String toString(){
-        return "Teacher Name: " + this.teacherName + " Subject: " + this.subject + " Current Grade: " +
+        return " Teacher Name: " + this.teacherName + " Subject: " + this.subject + " Current Grade: " +
                 this.currentGrade + " Period: " + this.period;
     }
 }
