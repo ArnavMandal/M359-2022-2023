@@ -13,6 +13,5 @@ public class StudentTester {
         Student s1 = new Student("Arnav", sched);
         System.out.println(s1);
 
-
     }
 }
