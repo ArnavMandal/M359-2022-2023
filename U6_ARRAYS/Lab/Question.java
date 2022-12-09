@@ -45,5 +45,18 @@ public class Question {
         this.value = value;
     }
 
-    public String toString
+    /**
+     * this function converts a Question object into a String and returns it.
+     * @return The String of the Question object.
+     */
+    public String toString(){
+
+        String out = this.question + "\n";
+
+        for (String s: choices)
+            out += s + "\n";
+
+        return out;
+    }
+
 }
