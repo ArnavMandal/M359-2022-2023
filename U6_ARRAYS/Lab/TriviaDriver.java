@@ -17,12 +17,59 @@ public class TriviaDriver {
 
             if(i > 0){
                 // repeats random number
-                while (totalQuestions[rand] == totalQuestions[i]){
-                rand = (int)(Math.random()* totalQuestions.length);
+                while (totalQuestions[rand].isQuestionUsed()){
+
+                    rand = (int)(Math.random()* totalQuestions.length);
+
                 }
             }
+            Question q = totalQuestions[rand];
+            q.setUsed(true);
+            System.out.println(q);
+            Scanner in = new Scanner(System.in);
+            System.out.println("Enter your answer: ");
+            String answer = in.nextLine();
+
+            if(!answer.substring(0, 1).equalsIgnoreCase(q.getAnswer().substring(0, 1))){
+                System.out.println("Sorry, that answer is incorrect.");
+                System.out.println("The correct answer is: " + q.getAnswer());
+                testGame.setStreak(0);
+                System.out.println("GAME STATS");
+                System.out.println("STREAK: " + testGame.getStreak());
+
+            }else{
+                System.out.println("Great Job! That's the correct answer");
+                System.out.println(q.getValue() + "has been added to your score");
+                System.out.println();
+                testGame.setScore(testGame.getScore() + q.getValue());
+                testGame.setStreak(testGame.getStreak() + 1);
+                testGame.setCorrectNum(testGame.getCorrectNum() + 1);
+                System.out.println("GAME STATS");
+                System.out.println("STREAK: " + testGame.getStreak());
+            }
+            System.out.println("TOTAL POINTS: " + testGame.getScore());
+            if(!playAgain() || i == testGame.getScore()) {
+                System.out.println("GAME END STATS");
+                System.out.println("CORRECT QUESTIONS: " + testGame.getCorrectNum());
+                System.out.println("PERCENT CORRECT: " + ((double)testGame.getCorrectNum()/15) * 100+ "%");
+                System.out.println("STREAK: " + testGame.getStreak());
+                separateText();
+                System.out.println();
+                break;
+            }
         }
+        closingStatement();
+        Scanner replay = new Scanner(System.in);
+        System.out.println("Do you want to replay the game? (yes/no)");
+        String replayResponse = replay.nextLine();
+        if (replayResponse.equalsIgnoreCase("yes")){
+            System.out.println();
+            //to recall the main method again to replay game
+            main(null);
+        }
+
     }
+
 
 
 
@@ -41,6 +88,7 @@ public class TriviaDriver {
 
         if(response.equalsIgnoreCase("yes")){
             System.out.print("Let the game go on!");
+            System.out.println();
             return true;
         }
         return false;

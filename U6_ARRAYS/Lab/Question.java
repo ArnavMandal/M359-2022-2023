@@ -6,11 +6,20 @@ public class Question {
     private String[] choices;
     private int value;
 
+    private boolean isUsed;
+
     public Question(String question, String answer, String[] choices, int value) {
         this.question = question;
         this.answer = answer;
         this.choices = choices;
         this.value = value;
+        this.isUsed = false;
+    }
+    public boolean isQuestionUsed(){
+        return isUsed;
+    }
+    public void setUsed(boolean used){
+        isUsed = used;
     }
 
     public String getQuestion() {
