@@ -7,7 +7,7 @@ public class TriviaDriver {
     public static void main(String[] args) throws FileNotFoundException {
 
         TriviaGame testGame = new TriviaGame();
-        welcome();
+        welcome(); //welcome statment
 
         Question[] totalQuestions = testGame.getQuestions();
 
