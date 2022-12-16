@@ -45,11 +45,8 @@ public class TriviaGame {
            String name = fileIn.nextLine();
 
            String a = fileIn.nextLine();
-
            String b = fileIn.nextLine();
-
            String c = fileIn.nextLine();
-
            String d = fileIn.nextLine();
 
            String correctChoice = fileIn.nextLine();

@@ -11,6 +11,7 @@ public class TriviaDriver {
 
         Question[] totalQuestions = testGame.getQuestions();
 
+
         for (int i = 0; i < totalQuestions.length; i++){
             //get random number
             int rand = (int)(Math.random()* totalQuestions.length);
@@ -29,6 +30,7 @@ public class TriviaDriver {
             Scanner in = new Scanner(System.in);
             System.out.println("Enter your answer: ");
             String answer = in.nextLine();
+
 
             if(!answer.substring(0, 1).equalsIgnoreCase(q.getAnswer().substring(0, 1))){
                 System.out.println("Sorry, that answer is incorrect.");
