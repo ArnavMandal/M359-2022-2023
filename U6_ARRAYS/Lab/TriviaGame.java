@@ -23,6 +23,13 @@ public class TriviaGame {
 
     this.questions = initQuestion();
     }
+
+    /**
+     * this function initializes a list of questions to be used
+     * in the trivia game from a txt file of trivia questions
+     * @return an array of questions from the txt file
+     * @throws FileNotFoundException
+     */
     public Question[] initQuestion() throws FileNotFoundException{
 
         File myFile = new File("trivia.txt");

@@ -48,7 +48,7 @@ public class TriviaDriver {
                 System.out.println("STREAK: " + testGame.getStreak());
             }
             System.out.println("TOTAL POINTS: " + testGame.getScore());
-            if(!playAgain() || i == testGame.getScore()) {
+            if(!playAgain() || i == testGame.getScore()) { //in case user doesn't want to play again
                 System.out.println("GAME END STATS");
                 System.out.println("CORRECT QUESTIONS: " + testGame.getCorrectNum());
                 System.out.println("PERCENT CORRECT: " + ((double)testGame.getCorrectNum()/15) * 100+ "%");
@@ -71,15 +71,22 @@ public class TriviaDriver {
     }
 
 
-
-
-
+    /**
+     * void method to help break up text from lines to
+     * make reading easier for user
+     */
     public static void separateText(){
         for (int i =0; i < 53; i++){
             System.out.print("*");
         }
     }
 
+    /**
+     * this boolean method asks if you want to continue playing
+     * the game after a question is answered
+     * @return boolean of true or false depending on if the user
+     * wants to play again
+     */
     public static boolean playAgain(){
         Scanner in = new Scanner(System.in);
         System.out.println("Would you like to play again? (yes/no)");
@@ -94,6 +101,10 @@ public class TriviaDriver {
         return false;
     }
 
+    /**
+     * void method which is used after the game has ended to say goodbye
+     * to the user and thank them for playing
+     */
     public static void closingStatement(){
         System.out.println();
         System.out.println("Thanks for playing food trivia, hope you had fun!");
