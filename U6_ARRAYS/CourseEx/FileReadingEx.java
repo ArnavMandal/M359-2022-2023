@@ -50,5 +50,6 @@ public class FileReadingEx {
 
             System.out.println(c);
         }
+        // hello cat
     }
 }
