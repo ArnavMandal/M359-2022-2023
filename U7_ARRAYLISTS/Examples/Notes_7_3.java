@@ -49,14 +49,14 @@ public class Notes_7_3 {
         System.out.println(list2);
 
         // Call removeEvensForward on list1
-        removeEvensBackward(list1);
+        removeEvensForward(list1);
         System.out.println(list1);
         // print list1
 
         // Call removeEvensBackward on list2
-
+        removeEvensBackward(list2);
         // print list2
-
+        System.out.println(list2);
 
         // SO DOES THIS MEAN REMOVING ELEMENTS WORKS THE SAME REGARDLESS OF HOW YOU
         // TRAVERSE THE ARRAY (FORWARD OR BACKWARD)?
@@ -119,6 +119,10 @@ public class Notes_7_3 {
      * @param vals ArrayList to remove values from
      */
     public static void removeEvensBackward(ArrayList<Integer> vals) {
-
+        for (int i = vals.size() - 1; i >= 0; i--){
+            if (vals.get(i) % 2 == 0){
+                vals.remove(i);
+            }
+        }
     }
 }
