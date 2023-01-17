@@ -25,6 +25,18 @@ public class TicketMaster {
     public void loadFile(String name) throws FileNotFoundException {
         Scanner inFile = new Scanner(new File(name));
 
+        while (inFile.hasNext()){
+            String date = inFile.next();
+            double price = inFile.nextDouble();
+            int tickets = inFile.nextInt();
+            String temp = inFile.nextLine();
+            String artist = temp.substring(0, temp.indexOf(","));
+            String loc = temp.substring(temp.indexOf(",") + 1);
+
+            Show newShow = new Show(date, price, tickets, artist, loc);
+
+            showsList.add(newShow);
+        }
     }
 
 }
