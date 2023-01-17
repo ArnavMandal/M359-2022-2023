@@ -4,7 +4,7 @@ public class Notes_7_3_TryCatch {
     public static void main(String[] args) {
         int[] nums = {1, 2, 3, 4};
         String str = "hello";
-
+    // hello cat test
         try {
             // int x = 5 / 0;
             // System.out.println("Last num: " + nums[4]);
