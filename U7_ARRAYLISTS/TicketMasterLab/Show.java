@@ -21,7 +21,7 @@ public class Show {
 
     public String toString(){
         String out = "";
-        out += this.date + ":\t" + this.price + ":\t" + this.qty + ":\t" + this.performer + ":\t" + this.city + ":\t";
+        out += this.date + "\t" + this.price + "\t" + this.qty + "\t" + this.performer + "\t" + this.city + "\t";
         return out;
     }
 

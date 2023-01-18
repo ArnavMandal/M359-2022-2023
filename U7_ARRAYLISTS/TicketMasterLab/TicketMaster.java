@@ -9,14 +9,14 @@ public class TicketMaster {
 
     private ArrayList<Show> showsList = new ArrayList<>();
 
-    public TicketMaster(ArrayList<Show> showsList) {
+    public TicketMaster() {
         this.showsList = showsList;
     }
     public String toString(){
         String out = "";
 
         out += "Date\t\tPrice\t\tQty\tPerformer\t\t\t\tCity\t\n";
-        out += "------------------------------------------------------------------------------";
+        out += "------------------------------------------------------------------------------\n";
         for (Show s: showsList){
             out += s.toString() + "\n";
         }
