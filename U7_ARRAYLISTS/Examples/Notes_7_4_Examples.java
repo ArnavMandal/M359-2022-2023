@@ -152,7 +152,12 @@ public class Notes_7_4_Examples {
      * @return new ArrayList of Strings in reverse order
      */
     public static ArrayList<String> revArrayList(ArrayList<String> list) {
-    return list;
+    ArrayList<String> temp = new ArrayList<>();
+
+    for (int i = list.size() - 1; i >= 0; i--){
+        temp.add(list.get(i));
+    }
+    return temp;
     }
 
     /**
@@ -161,7 +166,7 @@ public class Notes_7_4_Examples {
      * @param list
      */
     public static void shiftLeft(ArrayList<String> list) {
-
+    list.add(list.remove(0));
     }
 
 

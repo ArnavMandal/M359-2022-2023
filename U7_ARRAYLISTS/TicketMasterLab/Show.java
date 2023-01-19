@@ -21,7 +21,7 @@ public class Show {
 
     public String toString(){
         String out = "";
-        out += this.date + "\t" + this.price + "\t" + this.qty + "\t" + this.performer + "\t" + this.city + "\t";
+        out += this.date + "\t" + this.price + "\t" + this.qty + "\t" + spacer(this.performer)+ "\t" + this.city + "\t";
         return out;
     }
 
@@ -63,5 +63,21 @@ public class Show {
 
     public void setCity(String city) {
         this.city = city;
+    }
+    // <=6, <=9, <=11, <=15 goes from 5 tabs to 2
+
+    public String spacer(String name){
+        if(name.length() <= 6){
+            return name + "\t\t\t\t";
+        }else if (name.length() <= 9){
+            return name + "\t\t\t";
+        }else if (name.length() <= 11){
+            return name + "\t\t\t";
+        }else if (name.length() <= 15){
+            return name + "\t\t";
+        }
+        else {
+            return name + "\t";
+        }
     }
 }
