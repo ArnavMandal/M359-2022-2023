@@ -15,7 +15,7 @@ public class TicketMaster {
     public String toString(){
         String out = "";
 
-        out += "Date\t\tPrice\t\tQty\tPerformer\t\t\t\t City\t\n";
+        out += "Date\t\tPrice\tQty\t Performer\t\t\t\t City\t\n";
         out += "------------------------------------------------------------------------------\n";
         for (Show s: showsList){
             out += s.toString() + "\n";
