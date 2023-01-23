@@ -16,6 +16,7 @@ public class TicketMasterDriver {
         choices += "6. Quit";
         System.out.println(choices);
     // done but need to do try catch
+        //lol
     }
 
     public static void welcome() {
