@@ -2,11 +2,14 @@ package U7_ARRAYLISTS.Notes_7_5;
 
 // import ArrayList class
 
+import java.util.ArrayList;
+
 public class Store {
     // declare an instance variable of an ArrayList of type Item called myItems
+    private ArrayList<Item> myItems;
 
     public Store() {
-        // instantiate the ArrayList myItems
+        this.myItems = new ArrayList<Item>();
     }
 
     /**
@@ -25,7 +28,22 @@ public class Store {
      */
 
     public boolean updateStock(Item newItem) {
-    return true;
+    boolean isFound = false;
+
+    for (int i = 0; i < myItems.size(); i++){
+        if(myItems.get(i).equals(newItem)){
+            // item found
+            int origQty = myItems.get(i).getQuantity();
+            int addQty = newItem.getQuantity();
+
+            myItems.get(i).setQuantity(origQty + addQty);
+            isFound = true;
+        }
+    }
+    if (!isFound)
+        myItems.add(newItem);
+
+    return !isFound;
     }
 
     /**
@@ -34,8 +52,12 @@ public class Store {
      */
 
     public String toString() {
-    return "hello";
+    String out = "";
+        for (Item i: myItems){
+        out += i.toString() + " ";
 
+    }
+    return out;
     }
 
 }

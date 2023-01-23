@@ -24,7 +24,7 @@ public class TicketMasterDriver {
                 int ans = input.nextInt();
                 if (ans < 1 || ans > 6) {
                     throw new IllegalArgumentException("ERROR: Value must be between 1 and 6");
-
+                // hello cat
                 }
                 break;
             } catch (Exception e){
