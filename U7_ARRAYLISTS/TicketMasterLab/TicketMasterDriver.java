@@ -1,5 +1,5 @@
 package U7_ARRAYLISTS.TicketMasterLab;
-
+import java.util.Scanner;
 import java.io.FileNotFoundException;
 
 public class TicketMasterDriver {
@@ -15,8 +15,25 @@ public class TicketMasterDriver {
         choices += "5. Sort by Price (high - low)\n";
         choices += "6. Quit";
         System.out.println(choices);
-    // done but need to do try catch
-        //lol
+
+        System.out.println("Please enter a value between 1 and 6: ");
+
+        while (true) {
+            try {
+                Scanner input = new Scanner(System.in); // done but need to do try catch
+                int ans = input.nextInt();
+                if (ans < 1 || ans > 6) {
+                    throw new IllegalArgumentException("ERROR: Value must be between 1 and 6");
+
+                }
+                break;
+            } catch (Exception e){
+                System.out.println("ERROR: Please enter a integer value.");
+
+            }
+           // System.out.println("You entered: " + ans);
+        }
+
     }
 
     public static void welcome() {
