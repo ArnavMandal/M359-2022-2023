@@ -15,7 +15,7 @@ public class TicketMasterDriver {
         choices += "5. Sort by Price (high - low)\n";
         choices += "6. Quit";
         System.out.println(choices);
-
+    // done but need to do try catch
     }
 
     public static void welcome() {
