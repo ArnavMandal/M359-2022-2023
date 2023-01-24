@@ -1,9 +1,15 @@
 package U7_ARRAYLISTS.TicketMasterLab;
+import java.util.InputMismatchException;
 import java.util.Scanner;
 import java.io.FileNotFoundException;
 
 public class TicketMasterDriver {
     public static void main(String[] args) throws FileNotFoundException {
+        int choice = 0;
+
+        boolean isDone = false;
+
+        Scanner input = new Scanner(System.in);
         TicketMaster t = new TicketMaster();
         t.loadFile("showData (1).txt");
         System.out.println(t);
@@ -18,21 +24,27 @@ public class TicketMasterDriver {
 
         System.out.println("Please enter a value between 1 and 6: ");
 
-        while (true) {
+        while (!isDone) {
             try {
-                Scanner input = new Scanner(System.in); // done but need to do try catch
-                int ans = input.nextInt();
-                if (ans < 1 || ans > 6) {
-                    throw new IllegalArgumentException("ERROR: Value must be between 1 and 6");
-                // hello cat
+                choice = input.nextInt();
+                input.nextLine();
+                if (choice < 7 && choice > 0){
+                    isDone = true;
+
+                } else {
+                    System.out.println("Please enter a value between 1 and 6.");
+
                 }
-                break;
-            } catch (Exception e){
+
+            } catch (InputMismatchException e){
                 System.out.println("ERROR: Please enter a integer value.");
+                input.nextLine();
 
             }
-           // System.out.println("You entered: " + ans);
+
         }
+        System.out.println("You entered: " + choice);
+
 
     }
 

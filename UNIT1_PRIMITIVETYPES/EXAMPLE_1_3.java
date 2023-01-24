@@ -34,7 +34,7 @@ public class EXAMPLE_1_3 {
         System.out.print("more\b");
         System.out.println("\n\'please\"");
 
-    int numsNew = "Hello";
+
 
 
 
