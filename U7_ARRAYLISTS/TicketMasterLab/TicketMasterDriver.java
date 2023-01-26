@@ -4,12 +4,15 @@ import java.util.Scanner;
 import java.io.FileNotFoundException;
 
 public class TicketMasterDriver {
+    static Scanner input = new Scanner(System.in);
+
+    static String userCity = "";
     public static void main(String[] args) throws FileNotFoundException {
         int choice = 0;
 
         boolean isDone = false;
 
-        Scanner input = new Scanner(System.in);
+
         TicketMaster t = new TicketMaster();
         t.loadFile("showData (1).txt");
         System.out.println(t);
@@ -44,7 +47,11 @@ public class TicketMasterDriver {
 
         }
         System.out.println("You entered: " + choice);
-
+        if (choice == 1){
+            System.out.println("Enter city name: ");
+            userCity = input.nextLine();
+            t.searchByCity(userCity);
+        }
 
     }
 
@@ -53,5 +60,8 @@ public class TicketMasterDriver {
         System.out.println("\tYou may search our shows by city or sort by ticket price or performer");
         System.out.println("\t\tSimply select the correct option corresponding to your choice");
     }
+
+
+
 }
 

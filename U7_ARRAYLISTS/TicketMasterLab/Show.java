@@ -67,7 +67,7 @@ public class Show {
     // <=6, <=9, <=11, <=15 goes from 5 tabs to 2
 
     public String spacer(String name){
-        if(name.length() <= 6){
+        if(name.length() <= 7){
             return name + "\t\t\t\t";
         }else if (name.length() <= 9){
             return name + "\t\t\t";

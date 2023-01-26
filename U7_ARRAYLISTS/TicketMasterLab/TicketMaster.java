@@ -30,12 +30,20 @@ public class TicketMaster {
             double price = inFile.nextDouble();
             int tickets = inFile.nextInt();
             String temp = inFile.nextLine();
-            String artist = temp.substring(0, temp.indexOf(","));
-            String loc = temp.substring(temp.indexOf(",") + 1);
+            String artist = temp.substring(1, temp.indexOf(","));
+            String loc = temp.substring(temp.indexOf(",") + 2);
 
             Show newShow = new Show(date, price, tickets, artist, loc);
 
             showsList.add(newShow);
+        }
+    }
+
+    public void searchByCity(String userCity){
+        for (int i = 0; i < showsList.size(); i++){
+            if(showsList.get(i).getCity().equalsIgnoreCase(userCity)){
+                System.out.println(showsList.get(i).toString());
+            }
         }
     }
 
