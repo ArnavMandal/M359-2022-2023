@@ -53,6 +53,13 @@ public class TicketMasterDriver {
             t.searchByCity(userCity);
         }
 
+        if(choice == 2){
+            t.sortPerformerZA(t.getShowsList());
+        }
+
+        if (choice == 3){
+            t.sortPerformerAZ(t.getShowsList());
+        }
     }
 
     public static void welcome() {

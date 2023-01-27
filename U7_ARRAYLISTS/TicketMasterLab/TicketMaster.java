@@ -2,6 +2,7 @@ package U7_ARRAYLISTS.TicketMasterLab;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.StringReader;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -47,4 +48,42 @@ public class TicketMaster {
         }
     }
 
+    public void sortPerformerZA(ArrayList<Show> list){
+        for (int i = 0; i < list.size() - 1; i++){
+            int minIndex = i;
+
+            for (int j = i + 1; j < list.size(); j++){
+                if (list.get(j).getPerformer().compareTo(list.get(minIndex).getPerformer()) > 0){
+                    minIndex = j;
+                }
+            }
+            Show temp = list.get(i);
+            list.set(i, list.get(minIndex));
+            list.set(minIndex, temp);
+        }
+        for (int k = 0; k < list.size(); k++){
+            System.out.println(list.get(k));
+        }
+    }
+    public void sortPerformerAZ(ArrayList<Show> list){
+        for (int i = 0; i < list.size() - 1; i++){
+            int minIndex = i;
+
+            for (int j = i + 1; j < list.size(); j++){
+                if (list.get(j).getPerformer().compareTo(list.get(minIndex).getPerformer()) < 0){
+                    minIndex = j;
+                }
+            }
+            Show temp = list.get(i);
+            list.set(i, list.get(minIndex));
+            list.set(minIndex, temp);
+        }
+        for (int k = 0; k < list.size(); k++){
+            System.out.println(list.get(k));
+        }
+    }
+
+    public ArrayList<Show> getShowsList() {
+        return showsList;
+    }
 }
