@@ -99,7 +99,7 @@ public class TicketMaster {
             list.get(pos).setPrice(valueToInsert);
         }
         for (int k = 0; k < list.size(); k++){
-            System.out.println(list.get(i));
+            System.out.println(list.get(k));
         }
     }
 
