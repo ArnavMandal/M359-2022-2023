@@ -83,6 +83,28 @@ public class TicketMaster {
         }
     }
 
+    public void sortByPrice(ArrayList<Show> list){
+        for (int i = 1; i < list.size(); i++){
+            double valueToInsert = list.get(i).getPrice();
+
+            // find the right index to insert this to
+            int pos = i;
+            while (pos > 0 && list.get(pos - 1).getPrice() > valueToInsert){
+                list.set(pos, list.get(pos - 1));   // shifts left
+
+                pos--;
+            }
+            // at this point, "pos" identitifes the index
+            // where valueToInsert should go to:
+            list.get(pos).setPrice(valueToInsert);
+        }
+        for (int k = 0; k < list.size(); k++){
+            System.out.println(list.get(i));
+        }
+    }
+
+
+
     public ArrayList<Show> getShowsList() {
         return showsList;
     }

@@ -6,6 +6,19 @@ import java.io.FileNotFoundException;
 public class TicketMasterDriver {
     static Scanner input = new Scanner(System.in);
 
+    final int SEARCH_BY_CITY = 1;
+
+    final int SORT_BY_PERFORMERZA = 2;
+
+    final int SORT_BY_PERFORMERAZ = 3;
+
+    final int SORT_BY_PRICE_LOW_HIGH = 4;
+
+    final int SORT_BY_PRICE_HIGH_LOW = 5;
+
+    final int QUIT = 6;
+
+
     static String userCity = "";
     public static void main(String[] args) throws FileNotFoundException {
         int choice = 0;
@@ -24,20 +37,17 @@ public class TicketMasterDriver {
         choices += "5. Sort by Price (high - low)\n";
         choices += "6. Quit";
         System.out.println(choices);
-
         System.out.println("Please enter a value between 1 and 6: ");
 
         while (!isDone) {
             try {
                 choice = input.nextInt();
                 input.nextLine();
-                if (choice < 7 && choice > 0){
-                    isDone = true;
-
-                } else {
+                if (choice > 6 && choice < 0){
                     System.out.println("Please enter a value between 1 and 6.");
 
                 }
+
 
             } catch (InputMismatchException e){
                 System.out.println("ERROR: Please enter a integer value.");
@@ -45,21 +55,38 @@ public class TicketMasterDriver {
 
             }
 
-        }
-        System.out.println("You entered: " + choice);
-        if (choice == 1){
-            System.out.println("Enter city name: ");
-            userCity = input.nextLine();
-            t.searchByCity(userCity);
-        }
+            if (choice == 1){
+                System.out.println("Enter city name: ");
+                userCity = input.nextLine();
+                t.searchByCity(userCity);
+                System.out.println("");
+                welcome();
+                System.out.println(choices);
+            }
 
-        if(choice == 2){
-            t.sortPerformerZA(t.getShowsList());
-        }
+            if(choice == 2){
+                t.sortPerformerZA(t.getShowsList());
+                System.out.println("");
+                welcome();
+                System.out.println(choices);
+            }
 
-        if (choice == 3){
-            t.sortPerformerAZ(t.getShowsList());
+            if (choice == 3){
+                t.sortPerformerAZ(t.getShowsList());
+                System.out.println("");
+                welcome();
+                System.out.println(choices);
+            }
+
+
+
+            if (choice == 6){
+                isDone = true;
+                System.out.println("Thanks for using Arnav's Ticketmaster!");
+            }
         }
+        // here
+
     }
 
     public static void welcome() {
