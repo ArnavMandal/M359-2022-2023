@@ -94,16 +94,14 @@ public class TicketMaster {
 
                 pos--;
             }
-            // at this point, "pos" identitifes the index
+            // at this point, "pos" identifies the index
             // where valueToInsert should go to:
             list.get(pos).setPrice(valueToInsert);
         }
-        for (int k = 0; k < list.size(); k++){
-            System.out.println(list.get(k));
-        }
+
     }
 
-
+// lol
 // lol
     public ArrayList<Show> getShowsList() {
         return showsList;

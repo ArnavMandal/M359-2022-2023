@@ -6,17 +6,17 @@ import java.io.FileNotFoundException;
 public class TicketMasterDriver {
     static Scanner input = new Scanner(System.in);
 
-    final int SEARCH_BY_CITY = 1;
+    final static int SEARCH_BY_CITY = 1;
 
-    final int SORT_BY_PERFORMERZA = 2;
+    final static int SORT_BY_PERFORMERZA = 2;
 
-    final int SORT_BY_PERFORMERAZ = 3;
+    final static int SORT_BY_PERFORMERAZ = 3;
 
-    final int SORT_BY_PRICE_LOW_HIGH = 4;
+    final static int SORT_BY_PRICE_LOW_HIGH = 4;
 
-    final int SORT_BY_PRICE_HIGH_LOW = 5;
+    final static int SORT_BY_PRICE_HIGH_LOW = 5;
 
-    final int QUIT = 6;
+    final static int QUIT = 6;
 
 
     static String userCity = "";
@@ -55,7 +55,7 @@ public class TicketMasterDriver {
 
             }
 
-            if (choice == 1){
+            if (choice == SEARCH_BY_CITY){
                 System.out.println("Enter city name: ");
                 userCity = input.nextLine();
                 t.searchByCity(userCity);
@@ -64,21 +64,22 @@ public class TicketMasterDriver {
                 System.out.println(choices);
             }
 
-            if(choice == 2){
+            if(choice == SORT_BY_PERFORMERZA){
                 t.sortPerformerZA(t.getShowsList());
                 System.out.println("");
                 welcome();
                 System.out.println(choices);
             }
 
-            if (choice == 3){
+            if (choice == SORT_BY_PERFORMERZA){
                 t.sortPerformerAZ(t.getShowsList());
                 System.out.println("");
                 welcome();
                 System.out.println(choices);
             }
-            if (choice == 4){
+            if (choice == SORT_BY_PRICE_LOW_HIGH){
                 t.sortByPrice(t.getShowsList());
+
                 System.out.println("");
                 welcome();
                 System.out.println(choices);
