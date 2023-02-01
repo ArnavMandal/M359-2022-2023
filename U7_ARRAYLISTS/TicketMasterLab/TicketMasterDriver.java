@@ -77,6 +77,12 @@ public class TicketMasterDriver {
                 welcome();
                 System.out.println(choices);
             }
+            if (choice == 4){
+                t.sortByPrice(t.getShowsList());
+                System.out.println("");
+                welcome();
+                System.out.println(choices);
+            }
 
 
 
