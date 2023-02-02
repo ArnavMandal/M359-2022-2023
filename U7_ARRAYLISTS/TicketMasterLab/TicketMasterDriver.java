@@ -43,11 +43,10 @@ public class TicketMasterDriver {
             try {
                 choice = input.nextInt();
                 input.nextLine();
-                if (choice > 6 && choice < 0){
+                if (choice < 0 || choice > 6){
                     System.out.println("Please enter a value between 1 and 6.");
 
                 }
-
 
             } catch (InputMismatchException e){
                 System.out.println("ERROR: Please enter a integer value.");
@@ -78,21 +77,25 @@ public class TicketMasterDriver {
                 System.out.println(choices);
             }
             if (choice == SORT_BY_PRICE_LOW_HIGH){
-                t.sortByPrice(t.getShowsList());
+                t.sortByPrice(t.getShowsList(), true);
 
                 System.out.println("");
                 welcome();
                 System.out.println(choices);
             }
+            if (choice == SORT_BY_PRICE_HIGH_LOW){
+                t.sortByPrice(t.getShowsList(), false);
 
-
-
-            if (choice == 6){
+                System.out.println("");
+                welcome();
+                System.out.println(choices);
+            }
+            if (choice == QUIT){
                 isDone = true;
                 System.out.println("Thanks for using Arnav's Ticketmaster!");
             }
         }
-        // here
+
 
     }
 
