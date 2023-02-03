@@ -93,6 +93,7 @@ public class TicketMasterDriver {
             if (choice == QUIT){
                 isDone = true;
                 System.out.println("Thanks for using Arnav's Ticketmaster!\nWe hope to see you again!");
+                input.close();
             }
         }
 
