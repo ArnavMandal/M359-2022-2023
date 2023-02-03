@@ -70,7 +70,7 @@ public class TicketMasterDriver {
                 System.out.println(choices);
             }
 
-            if (choice == SORT_BY_PERFORMERZA){
+            if (choice == SORT_BY_PERFORMERAZ){
                 t.sortPerformerAZ(t.getShowsList());
                 System.out.println("");
                 welcome();
@@ -92,7 +92,7 @@ public class TicketMasterDriver {
             }
             if (choice == QUIT){
                 isDone = true;
-                System.out.println("Thanks for using Arnav's Ticketmaster!");
+                System.out.println("Thanks for using Arnav's Ticketmaster!\nWe hope to see you again!");
             }
         }
 
