@@ -44,7 +44,11 @@ public class TicketMaster {
         for (int i = 0; i < showsList.size(); i++){
             if(showsList.get(i).getCity().equalsIgnoreCase(userCity)){
                 System.out.println(showsList.get(i).toString());
+            }else {
+                System.out.println("There are no shows available in " + userCity);
+                break;
             }
+
         }
     }
 
