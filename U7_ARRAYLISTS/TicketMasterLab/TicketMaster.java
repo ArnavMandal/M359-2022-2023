@@ -13,6 +13,11 @@ public class TicketMaster {
     public TicketMaster() {
         this.showsList = showsList;
     }
+
+    /**
+     * toString function used to format the list of shows into easily readable string
+     * @return string of show list
+     */
     public String toString(){
         String out = "";
 
@@ -23,6 +28,14 @@ public class TicketMaster {
         }
         return out;
     }
+
+    /**
+     * void method used in the beginning of the driver class in order to
+     * read the text file containing the shows and inserting them into a
+     * arraylist of show objects
+     * @param name name of .txt file
+     * @throws FileNotFoundException
+     */
     public void loadFile(String name) throws FileNotFoundException {
         Scanner inFile = new Scanner(new File(name));
 
@@ -40,18 +53,30 @@ public class TicketMaster {
         }
     }
 
+    /**
+     * the linear search method to traverse the arraylist to find
+     * shows in user inputted city. Corresponds to user input 1. if theres
+     * no shows in that city, prints out a message to let user know.
+     * @param userCity city user wants to search for.
+     */
     public void searchByCity(String userCity){
+        int count = 0;
         for (int i = 0; i < showsList.size(); i++){
             if(showsList.get(i).getCity().equalsIgnoreCase(userCity)){
                 System.out.println(showsList.get(i).toString());
-            }else {
-                System.out.println("There are no shows available in " + userCity);
-                break;
+                count++;
             }
-
+            }
+        if(count == 0)
+            System.out.println("There are no shows available in " + userCity);
         }
-    }
 
+
+    /**
+     * void method to sort the shows be performers Z-A using selection sort method,
+     * corresponds to user input 2.
+     * @param list list of shows
+     */
     public void sortPerformerZA(ArrayList<Show> list){
         for (int i = 0; i < list.size() - 1; i++){
             int minIndex = i;
@@ -69,7 +94,12 @@ public class TicketMaster {
             System.out.println(list.get(k));
         }
     }
-    // lol
+
+    /**
+     * void method used to sort the list of shows alphabetically from A-Z, corresponds to user
+     * input 3
+     * @param list list of shows
+     */
     public void sortPerformerAZ(ArrayList<Show> list){
         for (int i = 0; i < list.size() - 1; i++){
             int minIndex = i;
@@ -88,6 +118,14 @@ public class TicketMaster {
         }
     }
 
+    /**
+     * void method used to sort the list of shows by price using insertion
+     * sort and printing them out from low to high or high to low depending
+     * on if user inputted 4 or 5.
+     * @param list list of shows
+     * @param high boolean value to indicate whether the last value is the highest
+     *             indicating low-high pricing
+     */
     public void sortByPrice(ArrayList<Show> list, boolean high){
         for (int i = 1; i < list.size(); i++){
             double valueToInsert = list.get(i).getPrice();
@@ -115,8 +153,7 @@ public class TicketMaster {
         }
     }
 
-// lol
-// lol
+
     public ArrayList<Show> getShowsList() {
         return showsList;
     }
