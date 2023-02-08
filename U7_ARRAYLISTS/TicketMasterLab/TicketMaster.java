@@ -69,6 +69,7 @@ public class TicketMaster {
             System.out.println(list.get(k));
         }
     }
+    // lol
     public void sortPerformerAZ(ArrayList<Show> list){
         for (int i = 0; i < list.size() - 1; i++){
             int minIndex = i;

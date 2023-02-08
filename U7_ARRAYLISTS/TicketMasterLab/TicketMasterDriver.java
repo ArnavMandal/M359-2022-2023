@@ -32,6 +32,7 @@ public class TicketMasterDriver {
 
     /**
      * welcome method to greet the user when opening the ticketmaster.
+     * returns nothing
      */
     public static void welcome() {
         System.out.println("\t\t\t\t\t* WELCOME TO ARNAV'S TICKETMASTER *");
