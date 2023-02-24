@@ -19,6 +19,10 @@ public class Show {
         this.city = city;
     }
 
+    /**
+     * formats a show object into a nicely formatted String
+     * @return String of show object
+     */
     public String toString(){
         String out = "";
         out += this.date + "\t" + this.price + "\t" + this.qty + "\t" + spacer(this.performer)+ "\t" + this.city + "\t";
@@ -66,6 +70,12 @@ public class Show {
     }
     // <=6, <=9, <=11, <=15 goes from 5 tabs to 2
 
+    /**
+     * helper method meant to help the toString space the names of
+     * performers consistently based on the length of their name
+     * @param name name of performer
+     * @return extra spacing with the String of the name
+     */
     public String spacer(String name){
         if(name.length() <= 7){
             return name + "\t\t\t\t";

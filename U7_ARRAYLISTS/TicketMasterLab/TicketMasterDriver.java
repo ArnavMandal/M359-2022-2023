@@ -40,6 +40,11 @@ public class TicketMasterDriver {
         System.out.println("\t\tSimply select the correct option corresponding to your choice");
     }
 
+    /**
+     * helper method that gets the user to the menu of choices and checks user input
+     * to make  sure it fits criteria (1 - 6), and then performs the action based on the
+     * input.
+     */
     public static void validateInput(){
 
         int choice = 0;
