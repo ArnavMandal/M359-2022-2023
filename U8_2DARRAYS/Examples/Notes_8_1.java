@@ -50,7 +50,7 @@ public class Notes_8_1 {
                 multiples[i][j] = (i + 2) * (j + 1);
             }
         }
-
+        // hello lol-
         // Print all values in multiples using a for loop
         for (int i = 0; i < multiples.length; i++){
             for (int j =0; j < multiples[i].length; j++){
